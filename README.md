@@ -1,15 +1,21 @@
-# OpenDev SDK — Android（AAR 分发）
+# OpenDev SDK — Android (prebuilt AAR)
 
-本仓库为 **预构建 AAR**，由 Walknote 主仓 `:core` 产出，便于在 **未接 Maven Central** 时通过 GitHub 引用。
+**Language:** English (default) · [简体中文](README.zh-CN.md)
 
-## 产物
+This repository contains **prebuilt AAR** artifacts for the **OpenDev SDK** (`androidTarget` in Kotlin Multiplatform). Use it when you consume the SDK from **GitHub** before **Maven Central** coordinates are available.
 
-- `opendev-sdk-release.aar` — 推荐集成
-- `opendev-sdk-debug.aar` — 调试（可选）
+> **Brand:** Public name **OpenDev SDK**. References to **Walknote** are examples only.
 
-## Gradle（本地 `files`）
+## Contents
 
-将对应 tag 检出或下载后：
+- `opendev-sdk-release.aar` — recommended for integration
+- `CHECKSUMS.sha256` — integrity verification (`shasum -a 256 -c CHECKSUMS.sha256` or `sha256sum -c`)
+- `sbom/` — resolved **Android release runtime** Maven coordinates (supply-chain transparency; not a full CycloneDX SBOM)
+- `opendev-sdk-debug.aar` — present only if your maintainer published with `WALKNOTE_OPENDEV_DIST_INCLUDE_DEBUG_AAR=1` (omitted by default)
+
+## Gradle (`files` dependency)
+
+Check out or download the **same Git tag** you depend on (for example `v2.0.0`), then:
 
 ```kotlin
 dependencies {
@@ -17,8 +23,17 @@ dependencies {
 }
 ```
 
-或通过 `flatDir` / `composite build` 接入；**Maven 坐标**（`io.github.zinben-opendev:opendev-android-sdk`）见主仓文档，待 Central 发布后切换。
+You may also use `flatDir` or a composite build. For official Maven coordinates (`io.github.zinben-opendev:opendev-android-sdk`), follow the OpenDev publishing guide when Central is enabled.
 
-## 版本与标签
+## Integration notes
 
-请使用与本仓库 **Git tag**（如 `v2.0.0`）一致的目录快照；主仓 staging 脚本与推送脚本会保持 `package.json` / tag 对齐策略见 `Docs/01-SDK/SDK_GITHUB_BINARIES_DISTRIBUTION.md`。
+- Initialize the SDK with CDN / channel / environment configuration from your OpenDev project.
+- Do not embed API secrets in source control; inject at build time or runtime via secure channels.
+
+## Process
+
+Staging and tags are described in the Walknote monorepo document **`Docs/01-SDK/SDK_GITHUB_BINARIES_DISTRIBUTION.md`** (maintainer-facing).
+
+## License
+
+See [LICENSE](LICENSE).
