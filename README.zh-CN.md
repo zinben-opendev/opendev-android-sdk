@@ -1,10 +1,18 @@
 # OpenDev SDK — Android（预构建 AAR）
 
-**语言说明：** 默认以英文 [`README.md`](README.md) 为准；本页为简体中文补充。
+**文档语言：** 默认以英文 [`README.md`](README.md) 为准；本页为简体中文补充。
 
 本仓库提供 **OpenDev SDK**（Kotlin Multiplatform `androidTarget`）的 **预构建 AAR**，用于在 **Maven Central** 坐标尚未启用时，通过 **GitHub** 引用。
 
 > **品牌：** 对外产品名为 **OpenDev SDK**。文中 **Walknote** 仅作示例说明。
+
+## 技术栈与语言
+
+| 方面 | 说明 |
+|------|------|
+| **SDK 源码实现**（不在本仓） | **Kotlin Multiplatform** `androidTarget`，产出 **JVM 字节码** 并打 **AAR**。 |
+| **本仓产物** | **`opendev-sdk-release.aar`** 等预编译包，**无** Java/Kotlin 源码树。 |
+| **集成方应用** | 多为 **Kotlin** 或 **Java** 的 Android 工程（Gradle `files` / `flatDir` 等）。 |
 
 ## 产物
 

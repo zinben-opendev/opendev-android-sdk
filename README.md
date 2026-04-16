@@ -1,10 +1,18 @@
 # OpenDev SDK — Android (prebuilt AAR)
 
-**Language:** English (default) · [简体中文](README.zh-CN.md)
+**Documentation:** English (default) · [简体中文](README.zh-CN.md)
 
 This repository contains **prebuilt AAR** artifacts for the **OpenDev SDK** (`androidTarget` in Kotlin Multiplatform). Use it when you consume the SDK from **GitHub** before **Maven Central** coordinates are available.
 
 > **Brand:** Public name **OpenDev SDK**. References to **Walknote** are examples only.
+
+## Technical stack (languages)
+
+| Aspect | What this repo contains / uses |
+|--------|--------------------------------|
+| **SDK implementation (source, not in this repo)** | **Kotlin Multiplatform** `androidTarget` → **JVM bytecode** + Android packaging as **AAR**. |
+| **Artifacts here** | **`opendev-sdk-release.aar`** (and optionally debug AAR) — no Java/Kotlin source tree. |
+| **Typical consumer apps** | **Kotlin** or **Java** Android apps using Gradle `files(...)` / `flatDir` (or Maven coordinates when Central is enabled). |
 
 ## Contents
 
