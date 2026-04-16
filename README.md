@@ -42,6 +42,14 @@ You may also use `flatDir` or a composite build. For official Maven coordinates 
 
 Staging and tags are described in the Walknote monorepo document **`Docs/01-SDK/SDK_GITHUB_BINARIES_DISTRIBUTION.md`** (maintainer-facing).
 
+## Security
+
+See [SECURITY.md](SECURITY.md).
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md).
+
 ## License
 
 See [LICENSE](LICENSE).
